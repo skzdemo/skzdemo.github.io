@@ -6,14 +6,24 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-  <title>Document</title>
+  <title>一人一句</title>
  </head>
  <body>
-  test
+<p id="merryWord"></p>
  </body>
- <script type="javascript" src="config/config.js"></script>
+ <script src="config/config.js"></script>
 <script>
- alert(config.merryWord);
- alert("111");
+ window.onload = function(){
+  let merryWords = config.merryWords;
+  if(!merryWords||merryWords.length<1){
+   alert("请在config/config.js文件配置祝福语");
+  }else {
+   let merryWordSize = merryWords.length;
+   let merryWord = merryWords[Math.floor(Math.random() * merryWordSize)];
+   alert(merryWord);
+   document.getElementById("merryWord").innerHTML = merryWord;
+  }
+ }
+
 </script>
 </html>
