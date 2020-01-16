@@ -6,10 +6,23 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
   <title>一人一句</title>
+  <link rel="stylesheet" href="dist/css/app.css">
  </head>
  <body>
-<p id="merryWord"></p>
+
+<section class="loading-mask">
+ <section class="copyLoading">
+  <p id="merryWord" style="position: absolute;text-align:center;font-size: 20px"></p>
+<!--  <div class="progress">-->
+<!--   <div class="progres-bar"><i class="icon-car"></i></div>-->
+<!--  </div>-->
+<!--  <p class="loading-text">努力加载中...</p>-->
+ </section>
+ <!-- end loading -->
+<!-- <a href="javascript:;" class="playBgMusic animate-notifylight" id="j-playBgMusic">进入</a>-->
+</section>
  </body>
  <script src="config/config.js"></script>
 <script>
@@ -20,7 +33,7 @@
   }else {
    let merryWordSize = merryWords.length;
    let merryWord = merryWords[Math.floor(Math.random() * merryWordSize)];
-   alert(merryWord);
+   // alert(merryWord);
    document.getElementById("merryWord").innerHTML = merryWord;
   }
  }
